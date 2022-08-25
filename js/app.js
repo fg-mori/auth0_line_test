@@ -51,7 +51,7 @@ window.onload = async () => {
     await auth0.handleRedirectCallback();
  
     updateUI();
-    window.history.replaceState({}, document.title, "/");
+    //window.history.replaceState({}, document.title, "/");
   }
 };
 
