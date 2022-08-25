@@ -1,5 +1,5 @@
 let auth0 = null;
-const fetchAuthConfig = () => fetch("./js/auth_config.json");
+const fetchAuthConfig = () => fetch("/auth0_line_test/auth_config.json");
  
 const configureClient = async () => {
   const response = await fetchAuthConfig();
