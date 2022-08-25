@@ -58,13 +58,14 @@ window.onload = async () => {
 // auth0.loginWithRedirect: Auth0のログイン画面へ移動 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin
+    redirect_uri: "https://" + window.location.host + window.location.pathname
+    
   });
 };
 
 // auth0.logout: ログアウト実行
 const logout = () => {
   auth0.logout({
-    returnTo: window.location.origin
+    returnTo: "https://" + window.location.host + window.location.pathname
   });
 };
