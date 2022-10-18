@@ -21,10 +21,11 @@ const updateUI = async () => {
  
   // auth0.getTokenSilently: トークン取得
   if (isAuthenticated) {
+    const idToken =  await auth0.getTokenSilently();
     document.getElementById("gated-content").classList.remove("hidden");
     document.getElementById(
       "ipt-access-token"
-    ).innerHTML = await auth0.getTokenSilently();
+    ).innerHTML = idToken;
     document.getElementById("ipt-user-profile").textContent = JSON.stringify(
       // auth0.getUser: ログインしているユーザーの情報取得
       await auth0.getUser()
